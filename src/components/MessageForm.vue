@@ -16,6 +16,14 @@
 export default {
   data() {
     return { username: "", message: "" };
+  },
+  methods: {
+    sendMessage() {
+      this.$socket.emit("chatMessage", {
+        username: this.username,
+        message: this.message
+      });
+    }
   }
 };
 </script>
