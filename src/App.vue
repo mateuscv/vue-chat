@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <navigation-bar />
-    <div class="container"><message-list :messages="messages" /></div>
+    <div class="container">
+      <message-list :messages="messages" />
+      <message-form></message-form>
+    </div>
     <connection-status :isConnected="isConnected"></connection-status>
   </div>
 </template>
 
 <script>
 import MessageList from "./components/MessageList.vue";
+import MessageForm from "./components/MessageForm.vue";
+
 export default {
   name: "app",
   data() {
@@ -28,7 +33,8 @@ export default {
     }
   },
   components: {
-    MessageList
+    MessageList,
+    MessageForm
   }
 };
 </script>
