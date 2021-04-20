@@ -1,10 +1,10 @@
 const app = require("express")();
-const http = require("http").Server(app);
-const io = require("socket.io")(http);
+const server = require("http").createServer(app);
+const io = require("socket.io")(server);
 const PORT = 3000;
 
-http.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
-
-io.on("connection", socket => {
+io.on("connection", () => {
   console.log("A user connected.");
 });
+
+server.listen(PORT);

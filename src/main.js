@@ -1,11 +1,20 @@
 import Vue from "vue";
 import App from "./App.vue";
-import SocketIo from "socket.io-client";
-import VueSocketIo from "vue-socket.io";
+import SocketIO from "socket.io-client";
+import VueSocketIO from "vue-socket.io";
 
-export const Socket = SocketIo(`http://localhost:3000`);
+console.log(VueSocketIO);
 
-Vue.use(VueSocketIo, Socket);
+export const Socket = SocketIO("http://localhost:3000", {
+  transports: ["websocket"]
+});
+
+Vue.use(
+  new VueSocketIO({
+    debug: true,
+    connection: Socket
+  })
+);
 
 new Vue({
   el: "#app",
