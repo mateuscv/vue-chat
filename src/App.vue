@@ -52,7 +52,10 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
+.container {
+  width: 300px;
+  margin: 0 auto;
+}
 h1,
 h2 {
   font-weight: normal;
