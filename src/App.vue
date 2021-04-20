@@ -1,10 +1,12 @@
 <template>
   <div id="app">
+    <navigation-bar />
     <connection-status :isConnected="isConnected"></connection-status>
   </div>
 </template>
 
 <script>
+import Navbar from "./components/Navbar.vue";
 export default {
   name: "app",
   data() {
