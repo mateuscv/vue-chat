@@ -1,17 +1,22 @@
 <template>
   <div id="app">
     <navigation-bar />
+    <div class="container"><message-list :messages="messages" /></div>
     <connection-status :isConnected="isConnected"></connection-status>
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
+import MessageList from "./components/MessageList.vue";
 export default {
   name: "app",
   data() {
     return {
-      isConnected: false
+      isConnected: false,
+      messages: [
+        { id: 1, username: "Paul", message: "Hey!" },
+        { id: 2, username: "Evan", message: "Sup?!" }
+      ]
     };
   },
   sockets: {
@@ -21,6 +26,9 @@ export default {
     disconnect() {
       this.isConnected = false;
     }
+  },
+  components: {
+    MessageList
   }
 };
 </script>
