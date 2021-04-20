@@ -30,6 +30,10 @@ export default {
     },
     disconnect() {
       this.isConnected = false;
+    },
+    chatMessage(messages) {
+      //this will be ran every time the event with the same name is emitted
+      this.messages = messages;
     }
   },
   components: {
