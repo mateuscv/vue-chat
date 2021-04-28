@@ -13,6 +13,7 @@ export default {};
   background-color: blueviolet;
   padding: 10px;
   margin: 0px;
+  margin-top: 0px;
   text-align: center;
   color: white;
 }
